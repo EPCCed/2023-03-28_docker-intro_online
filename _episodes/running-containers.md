@@ -60,6 +60,22 @@ docker.io/library/hello-world:latest
 > in a later episode.
 {: .callout}
 
+> ## Image already downloaded
+>
+> If the image has already been downloaded to your Docker instance, you may see a slightly 
+> different output, for example:
+>
+> ~~~
+> Using default tag: latest
+> latest: Pulling from library/hello-world
+> Digest: sha256:ffb13da98453e0f04d33a6eee5bb8e46ee50d08ebe17735fc0779d0349e889e9
+> Status: Image is up to date for hello-world:latest
+> docker.io/library/hello-world:latest
+> ~~~
+> {: .language-bash}
+{: .callout}
+
+
 > ## Exercise: Check on Your Images
 >
 > What command would you use to see if the `hello-world` Docker container image had downloaded

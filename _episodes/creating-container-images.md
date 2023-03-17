@@ -97,16 +97,27 @@ If you haven't already, exit out of the interactively running container.
 A `Dockerfile` is a plain text file with keywords and commands that
 can be used to create a new container image.
 
-From your shell, go to the folder you downloaded at the start of the lesson
-and print out the Dockerfile inside:
+Download and unpack the zip file with templates for this course to your space on the 
+course server with:
 
 ~~~
-$ cd ~/Desktop/docker-intro/basic
+wget https://epcced.github.io/2023-03-28_docker-intro_online/files/docker-intro.zip
+unzip docker-intro.zip
+~~~
+{: .language-bash}
+
+Now, go into the folder and print out the Dockerfile inside:
+
+~~~
+$ cd docker-intro/basic
 $ cat Dockerfile
 ~~~
 {: .language-bash}
 ~~~
 FROM <EXISTING IMAGE>
+
+ENV ...need to course-specific insert lines here...
+
 RUN <INSTALL CMDS FROM SHELL>
 RUN <INSTALL CMDS FROM SHELL>
 CMD <CMD TO RUN BY DEFAULT>
@@ -116,6 +127,7 @@ CMD <CMD TO RUN BY DEFAULT>
 Let's break this file down:
 
 - The first line, `FROM`, indicates which container image we're starting with.  It is the "base" container image we are going to start from.
+- The next line `ENV`, should contain specific settings to allow containers to download software from the internet on the course server. These are specific to the fact that we are running on a server setup by AstraZeneca and would not usually be needed. Your instructor will share the lines that need to be added here on the day of the course.
 - The next two lines `RUN`, will indicate installation commands we want to run. These
 are the same commands that we used interactively above.
 - The last line, `CMD`, indicates the default command we want a
@@ -152,6 +164,7 @@ to `ls -lF --color /etc`.
 > > to look like this:
 > > ~~~
 > > FROM alpine
+> > ENV ...need to course-specific insert lines here...
 > > RUN apk add --update python3 py3-pip python3-dev
 > > RUN pip install cython
 > > CMD ["python3", "--version"]
@@ -175,6 +188,15 @@ We have to provide `docker image build` with two pieces of information:
 - the name of the new container image. Remember the naming scheme from before? You should name
 your new image with your Docker Hub username and a name for the container image, like this: `USERNAME/CONTAINER_IMAGE_NAME`.
 
+> ## Changes for this course: user name
+>
+> As you are all running on the same server and sharing a common Docker install, using
+> the Docker Hub will not work as would if you were using your own Docker installation
+> (which is the usual setup). You can use your login username in the image tag
+> for these examples if you do not have a Docker Hub account as the shared Docker installation
+> means we will not be able to push the images to Docker Hub anyway.
+{: .callout}
+
 All together, the build command that you should run on your computer, will have a similar structure to this:
 
 ~~~
@@ -191,6 +213,8 @@ container image `alpine-python`, I would use this command:
 $ docker image build -t alice/alpine-python .
 ~~~
 {: .language-bash}
+
+
 
 > ## Build Context
 >
@@ -285,6 +309,11 @@ In general, a good strategy for installing software is:
 the container image from that.
 
 ## Share your new container image on Docker Hub
+
+> ## Issues with shared Docker install
+> As noted above, the way the setup is configured for this course means that you will not
+> be able to push to Docker Hub. We will demonstrate the process.
+{: .callout}
 
 Container images that you release publicly can be stored on the Docker Hub for free.  If you
 name your container image as described above, with your Docker Hub username, all you need to do

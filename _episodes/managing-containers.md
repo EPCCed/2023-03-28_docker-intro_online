@@ -14,6 +14,15 @@ keypoints:
 - "`docker container ls` or `docker ps` can provide information on currently running containers."
 ---
 
+> ## Shared Docker install
+>
+> As you are all using a single server with a shared Docker install, the commands in this section
+> will not work in the same way as would be the case when each learner has their own installation
+> of Docker. Using a shared installation of Docker is not typically how the tool is used so the
+> concepts and commands here are important and we will work through them but you may find that 
+> they do not work as expected for you on the server you are using for this course.
+{: .callout}
+
 ## Removing images
 
 The container images and their corresponding containers can start to take up a lot of disk space if you don't clean them up occasionally, so it's a good idea to periodically remove containers and container images that you won't be using anymore.

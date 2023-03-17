@@ -322,6 +322,9 @@ Here are some ideas:
 
 ~~~
 FROM alpine
+
+ENV ...need to course-specific insert lines here...
+
 RUN apk add --update python3 py3-pip python3-dev
 COPY sum.py /home
 
@@ -361,6 +364,8 @@ command line, use the keyword `ENTRYPOINT` in the `Dockerfile`.
 
 ~~~
 FROM alpine
+
+ENV ...need to course-specific insert lines here...
 
 COPY sum.py /home
 RUN apk add --update python3 py3-pip python3-dev
@@ -409,6 +414,8 @@ $ docker container run alpine-sum:v2 12 13 14
 
 ~~~
 FROM alpine
+
+ENV ...need to course-specific insert lines here...
 
 RUN apk add --update python3 py3-pip python3-dev
 

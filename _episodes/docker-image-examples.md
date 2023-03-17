@@ -10,6 +10,12 @@ keypoints:
 - "There are many ways you might use Docker and existing container images in your research project."
 ---
 
+> ## Changes for this course: examples will not work
+> The main example below (rendering a Jekyll website) will not work with the shared server
+> setup being used on this course. If you can get a Docker installation working on your own
+> laptop/workstation, you could follow through the Jekyll example on your own resource.
+{: .callout}
+
 Now that we have learned the basics of working with Docker container images and containers,
 let's apply what we learned to an example workflow.
 
