@@ -16,7 +16,7 @@ This course aims to introduce the use of containers with the goal of using them 
 > - Appreciate issues around reproducibility in software, understand how containers can address some of these issues and what the limits to reproducibility using containers are
 {: .objectives}
 
-The material on this site corresponds to part 1 of the course - covering Docker and running on 28 and 29 Mar 2023. Part 2 of the course will look at Singularity on 4 and 5 of Apr 2023 and 
+The material on this site corresponds to part 1 of the course - covering Docker and running on 30 and 31 May 2023. Part 2 of the course will look at Singularity on 6 and 8 of Jun 2023 and 
 [the part 2 material is available on a separate site](https://epcced.github.io/2023-04-04_singularity-intro_online/).
 
 {% include links.md %}
