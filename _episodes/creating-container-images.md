@@ -116,7 +116,7 @@ $ cat Dockerfile
 ~~~
 FROM <EXISTING IMAGE>
 
-ENV ...need to course-specific insert lines here...
+ENV ...need to add course-specific lines here...
 
 RUN <INSTALL CMDS FROM SHELL>
 RUN <INSTALL CMDS FROM SHELL>
